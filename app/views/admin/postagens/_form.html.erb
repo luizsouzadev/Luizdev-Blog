@@ -1,0 +1,31 @@
+<%= form_with(model: [:admin, postagem]) do |form| %>
+  <% if postagem.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(postagem.errors.count, "error") %> prohibited this postagem from being saved:</h2>
+
+      <ul>
+        <% postagem.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :titulo, style: "display: block" %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div>
+    <%= form.label :data, style: "display: block" %>
+    <%= form.datetime_field :data %>
+  </div>
+
+  <div>
+    <%= form.label :conteudo, style: "display: block" %>
+    <%= form.rich_text_area :conteudo, class: "form-control", style: "width: 500px; height: 300px;" %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

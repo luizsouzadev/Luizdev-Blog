@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Postagens</h1>
+
+<div id="postagens">
+  <% @postagens.each do |postagem| %>
+    <%= render postagem %>
+    <%= link_to "Editar Postagem", edit_admin_postagem_path(postagem) %>
+    <%= link_to "Excluir Postagem", admin_postagem_path(postagem), method: :delete %> 
+  <% end %>
+</div>  
+
+<%= link_to "Escrever Postagem", new_admin_postagem_path %>  
+ 

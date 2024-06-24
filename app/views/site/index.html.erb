@@ -1,0 +1,13 @@
+<em> Últimos Posts:</em>
+
+<div id="postagens">
+  <% @postagens.each do |postagem| %>
+    <strong> <%= postagem.titulo %> </strong>
+    <%= postagem.data.strftime("%d/%m/%Y")%>
+    <p>
+      <%= link_to "Ler mais", single_postagem_path(postagem) %>
+    </p>
+
+  <% end %>
+</div>
+

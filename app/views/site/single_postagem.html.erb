@@ -1,0 +1,19 @@
+<div>
+  <p>
+    <strong>Titulo:</strong>
+    <%= @postagem.try(:titulo) %>
+  </p>
+
+  <p>
+    <strong>Data:</strong>
+    <%= @postagem.try(:data).strftime("%d/%m/%Y") %>
+  </p>
+
+  <p>
+    <strong>Conteudo:</strong>
+    <%= @postagem.try(:conteudo) %>
+  </p>
+
+  <%= link_to "Retornar", root_path %>
+
+</div>
