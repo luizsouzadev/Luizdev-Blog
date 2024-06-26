@@ -7,8 +7,7 @@ class Admin::PostagensController < AdminController
   end
 
   # GET /postagens/1 or /postagens/1.json
-  def show
-  end
+  def show;end
 
   # GET /postagens/new
   def new
@@ -25,7 +24,7 @@ class Admin::PostagensController < AdminController
 
     respond_to do |format|
       if @postagem.save
-        format.html { redirect_to postagem_url(@postagem), notice: "Postagem was successfully created." }
+        format.html { redirect_to admin_postagem_url(@postagem), notice: "Postagem was successfully created." }
         format.json { render :show, status: :created, location: @postagem }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -33,8 +32,6 @@ class Admin::PostagensController < AdminController
       end
     end
   end
-
-
 
   # PATCH/PUT /postagens/1 or /postagens/1.json
   def update
