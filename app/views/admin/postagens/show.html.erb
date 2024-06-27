@@ -2,3 +2,7 @@
 
 <%= render @postagem %>
 
+<tr>
+  <td> <%= link_to "Editar", edit_admin_postagem_path %>
+  <td> <%= button_to "Excluir", admin_postagem_path, method: :delete %> 
+</tr>

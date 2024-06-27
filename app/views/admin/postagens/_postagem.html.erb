@@ -1,17 +1,19 @@
-<div id="<%= dom_id postagem %>">
+<% resource ||= postagem %>
+  
+  <div id="<%= dom_id postagem %>">
   <p>
     <strong>Titulo:</strong>
-    <%= postagem.titulo %>
+    <%= resource.titulo %>
   </p>
 
   <p>
     <strong>Data:</strong>
-  <%= postagem.data.strftime("%d/%m/%Y") %>
+  <%= resource.data.strftime("%d/%m/%Y") %>
   </p>
 
   <p>
     <strong>Conteudo:</strong>
-    <%= postagem.conteudo %>
+    <%= resource.try(:conteudo) %>
   </p>
 
 </div>

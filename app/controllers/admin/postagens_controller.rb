@@ -24,7 +24,7 @@ class Admin::PostagensController < AdminController
 
     respond_to do |format|
       if @postagem.save
-        format.html { redirect_to admin_postagem_url(@postagem), notice: "Postagem was successfully created." }
+        format.html { redirect_to admin_postagem_url(@postagem), notice: "Postagem Criada." }
         format.json { render :show, status: :created, location: @postagem }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -37,7 +37,7 @@ class Admin::PostagensController < AdminController
   def update
     respond_to do |format|
     if @postagem.update(postagem_params)
-        format.html { redirect_to admin_postagem_url(@postagem), notice: "Postagem was successfully updated." }
+        format.html { redirect_to admin_postagem_url(@postagem), notice: "Postagem Atualizada" }
         format.json { render :show, status: :ok, location: @postagem }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,7 +50,7 @@ class Admin::PostagensController < AdminController
   def destroy
     @postagem.destroy!
     respond_to do |format|
-      format.html { redirect_to admin_postagens_url, notice: "Postagem was successfully destroyed." }
+      format.html { redirect_to admin_postagens_url, notice: "Postagem Deletada" }
       format.json { head :no_content }
     end
   end
